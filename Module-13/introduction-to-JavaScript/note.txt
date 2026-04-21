@@ -1,0 +1,253 @@
+console.log(40-'20'); // 20
+-(minus operator) convert string to a number
+
+console.log(40+'20'); // 4020
++(plus operator) concatenate string
+
+isNaN
+------------
+if number then false
+if string then true
+
+console.log(isNaN(10));        // false (এটা number)
+console.log(isNaN("10"));      // false ("10" → number এ convert হয়)
+console.log(isNaN("hello"));   // true (number না)
+console.log(isNaN(undefined)); // true
+console.log(isNaN(NaN));       // true
+
+case sensitive
+-------------------
+🔹 Variable name-ও case sensitive
+let name = "Afrene";
+let Name = "Koly";
+
+console.log(name); // Afrene
+console.log(Name); // Koly
+
+👉 name আর Name completely আলাদা variable 😲
+
+camel case == myName (popular)
+snake case = my_name
+pascal case  = MyName
+
+parseInt()
+---------------
+it is a function that convert string to a number
+
+🔹 Example 1
+console.log(parseInt("10")); // 10
+🔹 Example 2 (decimal বাদ দেয়)
+console.log(parseInt("10.99")); // 10
+
+👉 শুধু integer অংশ নেয়
+
+🔹 Example 3 (string mix)
+console.log(parseInt("100px")); // 100
+
+👉 number পর্যন্ত নেয়, পরে stop করে
+
+🔹 Example 4 (invalid)
+console.log(parseInt("hello")); // NaN
+🔥 Important Tip
+parseInt("20.5") // 20
+
+👉 decimal বাদ যায়
+
+parseFloat()
+-------------------
+
+🔹 Example 1
+console.log(parseFloat("10")); // 10
+🔹 Example 2 (decimal সহ)
+console.log(parseFloat("10.99")); // 10.99
+
+👉 পুরো decimal রাখে 👍
+
+🔹 Example 3 (text এর সাথে mix)
+console.log(parseFloat("100.55px")); // 100.55
+
+👉 number পর্যন্ত নেয়, পরে stop করে
+
+🔹 Example 4 (invalid)
+console.log(parseFloat("hello")); // NaN
+
+💡 Example comparison
+console.log(parseInt("12.75"));   // 12
+console.log(parseFloat("12.75")); // 12.75
+🔥 Short Summary
+parseInt() → শুধু পূর্ণ সংখ্যা
+parseFloat() → decimal সহ সংখ্যা
+invalid হলে → NaN
+
+🔍 toFixed() কী?
+------------------
+
+👉 toFixed() হলো JavaScript-এর একটা method, যা number কে নির্দিষ্ট decimal place পর্যন্ত format করে string হিসেবে return করে।
+
+💻 Syntax
+number.toFixed(digits)
+digits → কয়টা decimal থাকবে
+🔹 Example 1
+let num = 10.5678;
+
+console.log(num.toFixed(2));
+
+👉 Output:
+
+10.57
+🔹 Example 2
+let num = 5.1;
+
+console.log(num.toFixed(2));
+
+👉 Output:
+
+5.10
+🔹 Example 3 (0 decimal)
+let num = 12.89;
+
+console.log(num.toFixed(0));
+
+👉 Output:
+
+13
+⚠️ Important Point
+
+👉 toFixed() string return করে, number না
+
+let num = 10.5;
+
+console.log(typeof num.toFixed(2)); // "string"
+🔥 Example (calculation + toFixed)
+let avg = 71.0367;
+
+console.log(avg.toFixed(2));
+
+👉 Output:
+
+71.04
+💡 Real Use
+Marks average
+Money calculation
+Price display (e.g. 99.99)
+🔥 Short Summary
+Decimal limit করে
+Round করে
+String return করে
+
+Modulus Operator
+-------------------
+🔹 Example 1
+console.log(10 % 3);
+
+👉 10 ÷ 3 = 3 remainder 1
+
+👉 Output:
+
+1
+
+shorthand
+-----------------
+price += 10; // price = price + 10;
+
+typeof
+------------
+
+var country='bangladesh';
+console.log(typeof country); // string
+
+🔍 const কী?
+-----------------
+
+👉 const হলো JavaScript-এর একটা keyword, যেটা দিয়ে variable declare করলে value আর change করা যায় না (constant থাকে)।
+
+🔥 Important Rule
+const age = 20;
+age = 25; // ❌ Error
+
+👉 কারণ const variable reassign করা যায় না
+
+
+🔍 null কী?
+-----------------------
+
+👉 null হলো JavaScript-এর একটা special value, যার মানে:
+“কিছুই নেই” / intentionally empty
+
+💻 Example
+let data = null;
+
+console.log(data); // null
+🔹 Meaning
+
+👉 null = তুমি নিজে value সেট করছো “empty” হিসেবে
+
+🔥 null vs undefined
+বিষয়	null	undefined
+মানে	empty (intentional)	value assign হয়নি
+কে দেয়	programmer	JavaScript
+Example:
+let a;
+console.log(a); // undefined
+
+let b = null;
+console.log(b); // null
+⚠️ Strange thing (important 😲)
+console.log(typeof null); // "object"
+
+👉 এটা JavaScript-এর একটা old bug
+
+🔹 Real-life use
+let user = null;
+
+// পরে data আসলে
+user = { name: "Koly" };
+🔥 Short Summary
+null = intentionally empty
+programmer assign করে
+typeof null → "object" (weird 😄)
+
+🔍 number (JavaScript)
+----------------------------
+
+👉 number হলো JavaScript-এর একটি data type, যা দিয়ে সব ধরনের সংখ্যা (integer + decimal) represent করা হয়।
+
+💻 Example
+let a = 10;      // integer
+let b = 10.5;    // decimal
+
+console.log(typeof a); // "number"
+console.log(typeof b); // "number"
+🔹 Types of Number
+✅ 1. Integer
+let num = 100;
+✅ 2. Floating (decimal)
+let num = 10.75;
+🔥 Special Number Values
+console.log(typeof NaN);       // "number" 😲
+console.log(typeof Infinity);  // "number"
+
+👉 JS-এ এগুলোও number type!
+
+🔹 Math Example
+let x = 10;
+let y = 3;
+
+console.log(x + y); // 13
+console.log(x / y); // 3.333...
+🔹 String → Number convert
+let str = "50";
+
+console.log(Number(str));      // 50
+console.log(parseInt(str));    // 50
+console.log(parseFloat(str));  // 50
+⚠️ Important
+console.log(0.1 + 0.2); // 0.30000000000000004 😵
+
+👉 floating precision issue
+
+🔥 Short Summary
+number = সব ধরনের সংখ্যা
+integer + decimal same type
+NaN, Infinity → number
+calculation এ use হয়
